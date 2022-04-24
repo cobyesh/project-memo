@@ -10,22 +10,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 *An overview of your dataset*
-I'm planning on doing my project on a commercial real estate asset pricing model. I'm not sure which asset class, but I may do multifamily.
+I'm planning on doing my project on a predictive pricing model for homes in Sacramento based on a dataset from 2008. this is a file already in caret
 
 **What does it include?**
-I am not sure what data I will be pulling yet. However, I will likely recieve data for a specific zip code with attributes such as building square footage, lot square footage, tax data, units, date built, etc.
+It includes ~980 homes with sale price data, sale date, beds, baths, sqft, zip code.
 
 **Where and how will you be obtaining it? Include the link and source.**
-I have reached out to a data service company called **Reonomy**, which are able to export all the data in a CSV or JSON file. I don't have a link as I'm still in discussions about obtaining the data for free or a reasonable price. 
+As mentioned above, it's online. caret. https://support.spatialkey.com/wp-content/uploads/2021/02/Sacramentorealestatetransactions.csv
 
 **About how many observations? How many predictors?**
-I don't know the answer to both, but I was planning on choosing at least 100 multifamily buildings (100 observations). As far as predictors, I am still sorting through their data dictionary to choose which predictors I believe are valuable, but I listed a few above. 
+~980, and about 12 predictors, but i dont expect to use all. 
 
 **What types of variables will you be working with?**
-Most, if not all, will be quantitative predictors. However, there may be one or two qualitative...
+Most, if not all, will be quantitative predictors. with the exception of house time, some may be homes, some condos
 
 **Is there any missing data? About how much? Do you have an idea for how to handle it?**
-There may be missing data. Again, I haven't seen the actual data set. However, the company may not have complete data for specific properties, given their database holds about 31 million commercial real estate properties. However, if I do have missing data, I would likely delete it, given how many observations are already at my disposal. 
+yes, looks like roughly 40-50. i may omit it as 850 observations seem sufficient. 
+
 
 *- An overview of your research question(s)*
 
@@ -39,7 +40,7 @@ Response/outcome variable would be price, and it would basically be the market v
 Definitely regression given the quantitative nature of our predictors
 
 **Which predictors do you think will be especially useful?**
-Square footage for sure, given that has a direct correlation on how much income a building brings in and therefore, its price. However, I believe units will be a strong factor as well.
+Square footage for sure, given that has a direct correlation on the income of the building. 
 
 **Is the goal of your model descriptive, predictive, inferential, or a combination? Explain.**
 I think, by nature, the model will be predictive, given we are looking to build a model where we could theoretically have an imaginary building, and assess where it would likely be priced at.
@@ -47,16 +48,15 @@ I think, by nature, the model will be predictive, given we are looking to build 
 **- Your proposed project timeline**
 
 *When do you plan on having your data set loaded, beginning your exploratory data analysis, etc?*
-I'm waiting to hear back from Reonomy legal team, given the fact that the data must strictly be used in an educational setting. However, I hope to be up and running by this week.
+I already have the data, and its in csv already, so shouldn't be difficult to sort, and omit missing data. 
 
 *Provide a general timeline for the rest of the quarter.*
 It's hard to provide a timeline, because I'm not sure if it's just a simple lin. regression, or a different model.
 However, I hope to clean the data in the first week, and begin to run different models with different predictors. However, I will likely need to use stepwise regression to see which variables work best.
-From there, I can begin my analysis, including doing some case studies, where I'd compare the property values to their actual price. 
+From there, I can begin my analysis, including doing some case studies, where I'd compare the property values to their actual price, looking at residuals. additionally, i'd love to look at some macroeconomic data from sacramento to perform some analysis. looking at median home price, especially over time, and see how my data fits in...
 
 **- Any questions or concerns**
 *Are there any problems or difficult aspects of the project you anticipate?*
-My biggest concern is looking at actual asset prices and comparing them across different years. For example, it wouldn't be correct to compare a property that sold in 2008 (at the height of GFC) to a property sale price in 2021 (the height of a strong CRE market). Hence, I haven't really decided whether to omit price or just look at property sales from a certain year. If I were to omit, it would become unsupervised learning, because we wouldn't have the $Y$ value. On the other hand, if we only kept a certain year, it would significantly slim our data down. 
 
 *Any specific questions you have for me/the instructional team?*
 I think it was pretty much addressed above, and would love to have a deeper conversation about what the best course of action is, to address those issues.
